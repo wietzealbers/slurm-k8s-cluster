@@ -1,12 +1,12 @@
-FROM rockylinux:8
+FROM rockylinux:9
 
 LABEL org.opencontainers.image.source="https://github.com/stackhpc/slurm-docker-cluster" \
       org.opencontainers.image.title="slurm-docker-cluster" \
-      org.opencontainers.image.description="Slurm Docker cluster on Rocky Linux 8" \
+      org.opencontainers.image.description="Slurm Docker cluster on Rocky Linux 9" \
       org.label-schema.docker.cmd="docker-compose up -d" \
       maintainer="StackHPC"
 
-ARG SLURM_TAG=slurm-23.02
+ARG SLURM_TAG=slurm-23.11
 ARG GOSU_VERSION=1.11
 
 COPY kubernetes.repo /etc/yum.repos.d/kubernetes.repo
