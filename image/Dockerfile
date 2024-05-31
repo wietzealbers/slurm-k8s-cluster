@@ -9,16 +9,16 @@ LABEL org.opencontainers.image.source="https://github.com/stackhpc/slurm-docker-
 ARG SLURM_TAG=slurm-23.11
 ARG GOSU_VERSION=1.11
 
-COPY kubernetes.repo /etc/yum.repos.d/kubernetes.repo
+##COPY kubernetes.repo /etc/yum.repos.d/kubernetes.repo
 
 RUN set -ex \
     && yum makecache \
     && yum -y update \
     && yum -y install dnf-plugins-core epel-release \
     && yum -y install dnf-plugins-core \
-    && yum config-manager --set-enabled powertools \
-    && yum -y module enable ruby:2.7 nodejs:14 \
-    && yum -y install https://yum.osc.edu/ondemand/2.0/ondemand-release-web-2.0-1.noarch.rpm \
+    && yum config-manager --set-enabled crb \
+    && yum -y module enable ruby:3.3 nodejs:20 \
+##    && yum -y install https://yum.osc.edu/ondemand/2.0/ondemand-release-web-2.0-1.noarch.rpm \
     && yum -y module install ruby nodejs \
     && yum -y install \
        wget \
@@ -47,12 +47,12 @@ RUN set -ex \
        hwloc-devel \
        openssh-server \
        apptainer \
-       ondemand \
-       kubectl \
+##       ondemand \
+##       kubectl \
     && yum clean all \
     && rm -rf /var/cache/yum
 
-RUN alternatives --set python /usr/bin/python3
+##RUN alternatives --set python /usr/bin/python3
 
 RUN pip3 install Cython nose
 
