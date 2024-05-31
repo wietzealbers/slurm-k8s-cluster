@@ -1,0 +1,29 @@
+apiVersion: v1
+entries:
+  rooknfs:
+  - apiVersion: v2
+    appVersion: 5fe4acc
+    created: "2024-05-31T09:53:14.289660519Z"
+    description: A packaged installation of Rook NFS for Kubernetes.
+    digest: 29aa9c33768c78ea8499a153ebcde29d6bb908b21d86309e53123d0b43cb9b54
+    name: rooknfs
+    urls:
+    - rooknfs-0.1.0-dev.0.main.345.tgz
+    version: 0.1.0-dev.0.main.345
+  slurm-cluster-chart:
+  - apiVersion: v2
+    appVersion: 5fe4acc
+    created: "2024-05-31T09:53:14.290775858Z"
+    dependencies:
+    - condition: rooknfs.enabled
+      name: rooknfs
+      repository: file://../rooknfs
+      version: '>=0-0'
+    description: A Helm chart for Kubernetes
+    digest: ef98db406717ea849558f521658776c335485e977ccf17a66921ecc2404836c2
+    name: slurm-cluster-chart
+    type: application
+    urls:
+    - slurm-cluster-chart-0.1.0-dev.0.main.345.tgz
+    version: 0.1.0-dev.0.main.345
+generated: "2024-05-31T09:53:14.289218404Z"
