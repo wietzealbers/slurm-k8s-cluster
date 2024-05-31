@@ -48,7 +48,7 @@ RUN set -ex \
        openssh-server \
        apptainer \
 ##       ondemand \
-##       kubectl \
+       kubectl \
     && yum clean all \
     && rm -rf /var/cache/yum
 
