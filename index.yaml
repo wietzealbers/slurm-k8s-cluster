@@ -2,8 +2,17 @@ apiVersion: v1
 entries:
   rooknfs:
   - apiVersion: v2
+    appVersion: 6cee2dc
+    created: "2024-05-31T11:40:15.711899816Z"
+    description: A packaged installation of Rook NFS for Kubernetes.
+    digest: e16955475a439e38973e7ae5821a1cd44b5c51b1218a7cb243343a7abab26942
+    name: rooknfs
+    urls:
+    - rooknfs-0.1.0-dev.0.main.347.tgz
+    version: 0.1.0-dev.0.main.347
+  - apiVersion: v2
     appVersion: ed4a052
-    created: "2024-05-31T10:05:20.357476439Z"
+    created: "2024-05-31T11:40:15.711645247Z"
     description: A packaged installation of Rook NFS for Kubernetes.
     digest: 84114663ef89e3621872f989afb9e8ff9c3a54b3736bc31aec3c040335f63476
     name: rooknfs
@@ -12,7 +21,7 @@ entries:
     version: 0.1.0-dev.0.main.346
   - apiVersion: v2
     appVersion: 5fe4acc
-    created: "2024-05-31T10:05:20.357207016Z"
+    created: "2024-05-31T11:40:15.711364529Z"
     description: A packaged installation of Rook NFS for Kubernetes.
     digest: 29aa9c33768c78ea8499a153ebcde29d6bb908b21d86309e53123d0b43cb9b54
     name: rooknfs
@@ -21,8 +30,23 @@ entries:
     version: 0.1.0-dev.0.main.345
   slurm-cluster-chart:
   - apiVersion: v2
+    appVersion: 6cee2dc
+    created: "2024-05-31T11:40:15.714810569Z"
+    dependencies:
+    - condition: rooknfs.enabled
+      name: rooknfs
+      repository: file://../rooknfs
+      version: '>=0-0'
+    description: A Helm chart for Kubernetes
+    digest: dc338e5575032f443b82e704a492c60184a04d94b7d9e1d021c472f6c262c9da
+    name: slurm-cluster-chart
+    type: application
+    urls:
+    - slurm-cluster-chart-0.1.0-dev.0.main.347.tgz
+    version: 0.1.0-dev.0.main.347
+  - apiVersion: v2
     appVersion: ed4a052
-    created: "2024-05-31T10:05:20.359303911Z"
+    created: "2024-05-31T11:40:15.713824404Z"
     dependencies:
     - condition: rooknfs.enabled
       name: rooknfs
@@ -37,7 +61,7 @@ entries:
     version: 0.1.0-dev.0.main.346
   - apiVersion: v2
     appVersion: 5fe4acc
-    created: "2024-05-31T10:05:20.358391978Z"
+    created: "2024-05-31T11:40:15.712887583Z"
     dependencies:
     - condition: rooknfs.enabled
       name: rooknfs
@@ -50,4 +74,4 @@ entries:
     urls:
     - slurm-cluster-chart-0.1.0-dev.0.main.345.tgz
     version: 0.1.0-dev.0.main.345
-generated: "2024-05-31T10:05:20.3568239Z"
+generated: "2024-05-31T11:40:15.710931565Z"
