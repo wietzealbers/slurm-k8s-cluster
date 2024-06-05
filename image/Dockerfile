@@ -18,7 +18,7 @@ RUN set -ex \
     && yum -y install dnf-plugins-core \
     && yum config-manager --set-enabled crb \
     && yum -y module enable ruby:3.1 nodejs:18 \
-##    && yum -y install https://yum.osc.edu/ondemand/2.0/ondemand-release-web-2.0-1.noarch.rpm \
+#    && yum -y install https://yum.osc.edu/ondemand/2.0/ondemand-release-web-2.0-1.noarch.rpm \
     && yum -y install https://yum.osc.edu/ondemand/3.1/ondemand-release-web-3.1-1.el9.noarch.rpm \
     && yum -y install https://yum.osc.edu/ondemand/3.1/ondemand-release-compute-3.1-1.el9.noarch.rpm \
     && yum -y module install ruby nodejs \
@@ -47,7 +47,7 @@ RUN set -ex \
        pmix-devel \
        hwloc \
        hwloc-devel \
-       dbus-devel
+       dbus-devel \
        openssh-server \
        apptainer \
        ondemand \
@@ -104,5 +104,3 @@ RUN mkdir /etc/sysconfig/slurm \
 VOLUME /etc/slurm
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-
-CMD ["slurmdbd"]
