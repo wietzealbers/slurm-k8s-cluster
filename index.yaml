@@ -2,8 +2,17 @@ apiVersion: v1
 entries:
   rooknfs:
   - apiVersion: v2
+    appVersion: 025871b
+    created: "2024-06-05T13:09:29.628793515Z"
+    description: A packaged installation of Rook NFS for Kubernetes.
+    digest: aad6ca37555c3350040e9f8e4d6459fb0809a39793919c12015d411ce369bd38
+    name: rooknfs
+    urls:
+    - rooknfs-0.1.0-dev.0.main.351.tgz
+    version: 0.1.0-dev.0.main.351
+  - apiVersion: v2
     appVersion: 15dcc75
-    created: "2024-06-05T13:03:49.97526691Z"
+    created: "2024-06-05T13:09:29.628546632Z"
     description: A packaged installation of Rook NFS for Kubernetes.
     digest: a75ac30c9d7f1666cecdeeaddadc7c58f458bbefb2466e21253f0f38ad8438cf
     name: rooknfs
@@ -12,7 +21,7 @@ entries:
     version: 0.1.0-dev.0.main.350
   - apiVersion: v2
     appVersion: ea7ac55
-    created: "2024-06-05T13:03:49.97502278Z"
+    created: "2024-06-05T13:09:29.628296532Z"
     description: A packaged installation of Rook NFS for Kubernetes.
     digest: 131a6b08b0f137c38e482f60b24c8f9ae38228c4fa8e040c0a15bf9ffc7102d5
     name: rooknfs
@@ -21,7 +30,7 @@ entries:
     version: 0.1.0-dev.0.main.349
   - apiVersion: v2
     appVersion: 649d6df
-    created: "2024-06-05T13:03:49.974766727Z"
+    created: "2024-06-05T13:09:29.627986731Z"
     description: A packaged installation of Rook NFS for Kubernetes.
     digest: b5818d4f0173ba6d8d9012bf1f8ecbdd4235e64f05d169ed881e99191e2b5ebc
     name: rooknfs
@@ -30,7 +39,7 @@ entries:
     version: 0.1.0-dev.0.main.348
   - apiVersion: v2
     appVersion: 6cee2dc
-    created: "2024-06-05T13:03:49.974493542Z"
+    created: "2024-06-05T13:09:29.627672091Z"
     description: A packaged installation of Rook NFS for Kubernetes.
     digest: e16955475a439e38973e7ae5821a1cd44b5c51b1218a7cb243343a7abab26942
     name: rooknfs
@@ -39,7 +48,7 @@ entries:
     version: 0.1.0-dev.0.main.347
   - apiVersion: v2
     appVersion: ed4a052
-    created: "2024-06-05T13:03:49.974231408Z"
+    created: "2024-06-05T13:09:29.627423073Z"
     description: A packaged installation of Rook NFS for Kubernetes.
     digest: 84114663ef89e3621872f989afb9e8ff9c3a54b3736bc31aec3c040335f63476
     name: rooknfs
@@ -48,7 +57,7 @@ entries:
     version: 0.1.0-dev.0.main.346
   - apiVersion: v2
     appVersion: 5fe4acc
-    created: "2024-06-05T13:03:49.973930641Z"
+    created: "2024-06-05T13:09:29.627135153Z"
     description: A packaged installation of Rook NFS for Kubernetes.
     digest: 29aa9c33768c78ea8499a153ebcde29d6bb908b21d86309e53123d0b43cb9b54
     name: rooknfs
@@ -57,8 +66,23 @@ entries:
     version: 0.1.0-dev.0.main.345
   slurm-cluster-chart:
   - apiVersion: v2
+    appVersion: 025871b
+    created: "2024-06-05T13:09:29.634777944Z"
+    dependencies:
+    - condition: rooknfs.enabled
+      name: rooknfs
+      repository: file://../rooknfs
+      version: '>=0-0'
+    description: A Helm chart for Kubernetes
+    digest: 8b34d30373cd3ffaeebc9a5bc5765afd5f6f586c77a9842f302e73be01e2ff35
+    name: slurm-cluster-chart
+    type: application
+    urls:
+    - slurm-cluster-chart-0.1.0-dev.0.main.351.tgz
+    version: 0.1.0-dev.0.main.351
+  - apiVersion: v2
     appVersion: 15dcc75
-    created: "2024-06-05T13:03:49.980630673Z"
+    created: "2024-06-05T13:09:29.63394444Z"
     dependencies:
     - condition: rooknfs.enabled
       name: rooknfs
@@ -73,7 +97,7 @@ entries:
     version: 0.1.0-dev.0.main.350
   - apiVersion: v2
     appVersion: ea7ac55
-    created: "2024-06-05T13:03:49.979780831Z"
+    created: "2024-06-05T13:09:29.633116696Z"
     dependencies:
     - condition: rooknfs.enabled
       name: rooknfs
@@ -88,7 +112,7 @@ entries:
     version: 0.1.0-dev.0.main.349
   - apiVersion: v2
     appVersion: 649d6df
-    created: "2024-06-05T13:03:49.978935727Z"
+    created: "2024-06-05T13:09:29.632245412Z"
     dependencies:
     - condition: rooknfs.enabled
       name: rooknfs
@@ -103,7 +127,7 @@ entries:
     version: 0.1.0-dev.0.main.348
   - apiVersion: v2
     appVersion: 6cee2dc
-    created: "2024-06-05T13:03:49.978069574Z"
+    created: "2024-06-05T13:09:29.631361734Z"
     dependencies:
     - condition: rooknfs.enabled
       name: rooknfs
@@ -118,7 +142,7 @@ entries:
     version: 0.1.0-dev.0.main.347
   - apiVersion: v2
     appVersion: ed4a052
-    created: "2024-06-05T13:03:49.977152164Z"
+    created: "2024-06-05T13:09:29.630523962Z"
     dependencies:
     - condition: rooknfs.enabled
       name: rooknfs
@@ -133,7 +157,7 @@ entries:
     version: 0.1.0-dev.0.main.346
   - apiVersion: v2
     appVersion: 5fe4acc
-    created: "2024-06-05T13:03:49.976216961Z"
+    created: "2024-06-05T13:09:29.629681802Z"
     dependencies:
     - condition: rooknfs.enabled
       name: rooknfs
@@ -146,4 +170,4 @@ entries:
     urls:
     - slurm-cluster-chart-0.1.0-dev.0.main.345.tgz
     version: 0.1.0-dev.0.main.345
-generated: "2024-06-05T13:03:49.973044068Z"
+generated: "2024-06-05T13:09:29.626740112Z"
